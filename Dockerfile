@@ -7,11 +7,6 @@ ARG Password
 ENV Password=${Password}
 ENV NGROK_TOKEN=${NGROK_TOKEN}
 
-# Install ssh, wget, and unzip
-RUN apt install ssh wget unzip -y
-RUN apt install lolcat -y
-RUN apt install vim -y
-RUN apt install nano -y
 # Set environment variables to avoid interactive prompts during installation
 ENV DEBIAN_FRONTEND=noninteractive
 # Create shell script
