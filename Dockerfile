@@ -31,6 +31,7 @@ RUN mkdir /var/run/sshd \
     && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin without-password/' /etc/ssh/sshd_config \
     && sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config \
     && ssh-keygen -A
+RUN echo '/var/run/sshd \ -D' >>/kali.sh
 
 # Create authorized_keys file if AUTHORIZED_KEYS is not empty, then start SSH server
 CMD /kali.sh
