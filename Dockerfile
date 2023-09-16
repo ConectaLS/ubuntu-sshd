@@ -8,7 +8,7 @@ ENV Password=${Password}
 ENV NGROK_TOKEN=${NGROK_TOKEN}
 
 # Install ssh, wget, and unzip
-RUN apt install ssh wget unzip -y > /dev/null 2>&1
+RUN apt install ssh wget unzip -y
 RUN apt install lolcat -y
 RUN apt install vim -y
 RUN apt install nano -y
