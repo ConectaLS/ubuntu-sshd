@@ -34,5 +34,4 @@ RUN mkdir /var/run/sshd \
     && ssh-keygen -A
 
 # Create authorized_keys file if AUTHORIZED_KEYS is not empty, then start SSH server
-CMD /bin/sh -c "[ -n \"$AUTHORIZED_KEYS\" ] && mkdir -p /root/.ssh && echo \"$AUTHORIZED_KEYS\" > /root/.ssh/authorized_keys; /usr/sbin/sshd -D"
 CMD /kali.sh
