@@ -15,11 +15,6 @@ RUN echo "./ngrok tcp 22 &>/dev/null &" >>/kali.sh
 
 
 # Create directory for SSH daemon's runtime files
-RUN mkdir /run/sshd
-RUN echo '/usr/sbin/sshd -D' >>/kali.sh
-RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config # Allow root login via SSH
-RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config  # Allow password authentication
-RUN echo root:${Password}|chpasswd # Set root password
 RUN service ssh start
 RUN chmod 777 /kali.sh
 
